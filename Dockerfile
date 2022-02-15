@@ -8,11 +8,10 @@ WORKDIR /stocks_products
 
 RUN apk update && apk add nano
 
-RUN python -m pip install --upgrade pip && pip install -r requirements.txt && pip install django-environ
+RUN python -m pip install --upgrade pip && pip install -r requirements.txt
 
-#RUN python manage.py migrate
+RUN chmod +x /stocks_products/entrypoint.sh
 
-RUN pip install gunicorn && python manage.py collectstatic
-
+ENTRYPOINT ["/stocks_products/entrypoint.sh"]
 
 

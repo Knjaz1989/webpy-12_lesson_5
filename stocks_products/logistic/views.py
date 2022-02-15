@@ -1,4 +1,3 @@
-
 from django_filters import rest_framework as filter
 
 from rest_framework.filters import SearchFilter
@@ -34,3 +33,4 @@ class StockViewSet(ModelViewSet):
     # при необходимости добавьте параметры фильтрации
     filter_backends = [filter.DjangoFilterBackend]
     filterset_class = StockFilter
+
